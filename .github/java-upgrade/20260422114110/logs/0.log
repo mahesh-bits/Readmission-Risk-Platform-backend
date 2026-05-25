@@ -1,0 +1,86 @@
+2026-04-22T11:41:10.996Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-04-22T11:41:10.997Z [INFO] [Tool.invoke]({name: appmod-report-event, input: {
+  "projectPath": "/Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend",
+  "event": "precheckCompleted",
+  "phase": "precheck",
+  "status": "succeeded"
+}}).
+2026-04-22T11:41:10.997Z [INFO] [Tool.invoke] do invoke.
+2026-04-22T11:41:10.999Z [INFO] Project /Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend is a maven project, try to get java version from pom.xml
+2026-04-22T11:41:11.000Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'precheckCompleted' reported!\nSession ID: 20260422114110,\nSession Dir: /Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend/.github/java-upgrade/20260422114110"
+}}).
+2026-04-22T11:41:11.000Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-04-22T11:41:11.001Z [INFO] Project java version: 21
+2026-04-22T11:41:11.001Z [INFO] Maven project detected.
+2026-04-22T11:41:11.001Z [INFO] Build tool type: mvn
+2026-04-22T11:41:11.227Z [INFO] JDK: {
+  "name": "java",
+  "path": "/Users/mmahes11/Library/Java/JavaVirtualMachines/ms-21.0.10/Contents/Home/bin",
+  "version": "21"
+}
+2026-04-22T11:41:11.228Z [INFO] Build tool: undefined
+2026-04-22T11:41:11.229Z [ERROR] Failed to detect or resolve build tool for the project at /Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend.
+2026-04-22T11:41:11.229Z [ERROR] [ReportEventTool] Failed to send project info telemetry: UserError: Failed to detect or resolve build tool for the project at /Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend. Please ensure the build tool Maven is installed and properly configured on the machine.
+2026-04-22T11:41:20.921Z [INFO] ---------------------prepare appmod-report-event----------------------
+2026-04-22T11:41:20.921Z [INFO] [Tool.prepareInvocation]({name: appmod-report-event, input: {
+  "event": "planGenerationStarted",
+  "phase": "plan",
+  "sessionId": "20260422114110",
+  "projectPath": "/Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend",
+  "status": "succeeded"
+}}).
+2026-04-22T11:41:20.922Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-04-22T11:41:20.922Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "Report upgrade event"
+}}).
+2026-04-22T11:41:20.922Z [INFO] ----------------------prepared appmod-report-event----------------------
+2026-04-22T11:41:20.925Z [INFO] ----------------------invoke appmod-report-event----------------------
+2026-04-22T11:41:20.926Z [INFO] [Tool.invoke]({name: appmod-report-event, input: {
+  "event": "planGenerationStarted",
+  "phase": "plan",
+  "sessionId": "20260422114110",
+  "projectPath": "/Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend",
+  "status": "succeeded"
+}}).
+2026-04-22T11:41:20.926Z [INFO] [Tool.invoke] do invoke.
+2026-04-22T11:41:20.927Z [INFO] [Tool.invoke]({result: {
+  "message": "Event 'planGenerationStarted' reported!\nSession ID: 20260422114110,\nSession Dir: /Users/mmahes11/Documents/MTECH PROJECT/readmission-risk-platform-iter2/backend/.github/java-upgrade/20260422114110"
+}}).
+2026-04-22T11:41:20.927Z [INFO] ----------------------invoked appmod-report-event----------------------
+2026-04-22T11:41:44.591Z [INFO] ---------------------prepare appmod-list-jdks----------------------
+2026-04-22T11:41:44.592Z [INFO] [Tool.prepareInvocation]({name: appmod-list-jdks, input: {
+  "sessionId": "20260422114110"
+}}).
+2026-04-22T11:41:44.593Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-04-22T11:41:44.593Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "List jdks"
+}}).
+2026-04-22T11:41:44.593Z [INFO] ----------------------prepared appmod-list-jdks----------------------
+2026-04-22T11:41:44.595Z [INFO] ----------------------invoke appmod-list-jdks----------------------
+2026-04-22T11:41:44.596Z [INFO] [Tool.invoke]({name: appmod-list-jdks, input: {
+  "sessionId": "20260422114110"
+}}).
+2026-04-22T11:41:44.596Z [INFO] [Tool.invoke] do invoke.
+2026-04-22T11:41:44.655Z [INFO] [Tool.invoke]({result: {
+  "message": "We found following jdks in your system:\n\n1. Java 17.0.15\n   📁 Path: /Users/mmahes11/Library/Java/JavaVirtualMachines/ms-17.0.15/Contents/Home/bin\n   🏷️ Source: others\n\n2. Java 21.0.10\n   📁 Path: /Users/mmahes11/Library/Java/JavaVirtualMachines/ms-21.0.10/Contents/Home/bin\n   🏷️ Source: others\n\n3. Java 21.0.8\n   📁 Path: /Users/mmahes11/.jdk/jdk-21.0.8/jdk-21.0.8+9/Contents/Home/bin\n   🏷️ Source: install\n\nTotal: 3 JDK installation(s) found"
+}}).
+2026-04-22T11:41:44.656Z [INFO] ----------------------invoked appmod-list-jdks----------------------
+2026-04-22T11:41:44.660Z [INFO] ---------------------prepare appmod-list-mavens----------------------
+2026-04-22T11:41:44.660Z [INFO] [Tool.prepareInvocation]({name: appmod-list-mavens, input: {
+  "sessionId": "20260422114110"
+}}).
+2026-04-22T11:41:44.660Z [INFO] [Tool.prepareInvocation] do prepare invocation.
+2026-04-22T11:41:44.660Z [INFO] [Tool.prepareInvocation]({result: {
+  "invocationMessage": "List mavens"
+}}).
+2026-04-22T11:41:44.661Z [INFO] ----------------------prepared appmod-list-mavens----------------------
+2026-04-22T11:41:44.664Z [INFO] ----------------------invoke appmod-list-mavens----------------------
+2026-04-22T11:41:44.664Z [INFO] [Tool.invoke]({name: appmod-list-mavens, input: {
+  "sessionId": "20260422114110"
+}}).
+2026-04-22T11:41:44.665Z [INFO] [Tool.invoke] do invoke.
+2026-04-22T11:41:44.666Z [INFO] [Tool.invoke]({result: {
+  "message": "No Maven installations found."
+}}).
+2026-04-22T11:41:44.666Z [INFO] ----------------------invoked appmod-list-mavens----------------------
