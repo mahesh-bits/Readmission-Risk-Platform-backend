@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 public class ClinicalNoteController {
 
   private final ClinicalNoteRepo noteRepo;

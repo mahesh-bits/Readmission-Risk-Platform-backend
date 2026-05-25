@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/admin")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000"})
+@CrossOrigin(origins = {"*"})
 public class AdminController {
 
   private final AppUserRepo userRepo;
