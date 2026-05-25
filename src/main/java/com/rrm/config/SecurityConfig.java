@@ -34,7 +34,12 @@ public class SecurityConfig {
   @Bean
   public CorsConfigurationSource corsConfigurationSource() {
     CorsConfiguration configuration = new CorsConfiguration();
-    configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "https://prrmapp-cvedhvdhf7esbdc2.southindia-01.azurewebsites.net/"));
+    configuration.setAllowedOrigins(Arrays.asList(
+            "http://localhost:4200",
+            "http://localhost:4300",
+            "http://localhost:3000",
+            "https://prrmapp-cvedhvdhf7esbdc2.southindia-01.azurewebsites.net"
+    ));
     configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
     configuration.setAllowedHeaders(Arrays.asList("*"));
     configuration.setAllowCredentials(true);
@@ -65,7 +70,8 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
                     .requestMatchers(
                             "/actuator/**",
-                            "/api/inference/**"
+                            "/api/inference/**",
+                            "/api/auth/**"
                     ).permitAll()
                     .anyRequest().authenticated()
             )
