@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "http://rrm-backend-haa4gahsezf5chgc.southindia-01.azurewebsites.net"})
 public class AuthController {
 
   private final AppUserRepo userRepo;

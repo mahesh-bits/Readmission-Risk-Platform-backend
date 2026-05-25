@@ -8,7 +8,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/inference")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "*"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "http://rrm-backend-haa4gahsezf5chgc.southindia-01.azurewebsites.net"})
 public class InferenceController {
 
   private final RestClient restClient;
