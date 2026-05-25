@@ -8,33 +8,36 @@ import com.rrm.repo.DocumentRepo;
 import com.rrm.repo.EncounterRepo;
 import com.rrm.repo.PatientRepo;
 import com.rrm.repo.PredictionRepo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.rrm.service.PredictionService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/patients")
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000"})
 public class PatientController {
 
-  private static final Logger log = LoggerFactory.getLogger(PatientController.class);
   private final PatientRepo repo;
   private final AdmissionRepo admissionRepo;
   private final PredictionRepo predictionRepo;
   private final EncounterRepo encounterRepo;
   private final DocumentRepo documentRepo;
+  private final PredictionService predictionService;
 
   public PatientController(PatientRepo repo, AdmissionRepo admissionRepo,
                            PredictionRepo predictionRepo, EncounterRepo encounterRepo,
-                           DocumentRepo documentRepo) {
+                           DocumentRepo documentRepo, PredictionService predictionService) {
     this.repo = repo;
     this.admissionRepo = admissionRepo;
     this.predictionRepo = predictionRepo;
     this.encounterRepo = encounterRepo;
     this.documentRepo = documentRepo;
+    this.predictionService = predictionService;
   }
 
   @GetMapping
@@ -48,7 +51,7 @@ public class PatientController {
       patients = repo.findAll();
     }
     if (patients.isEmpty()) return List.of();
-    log.info("patients: {}", patients);
+
     List<UUID> ids = patients.stream().map(Patient::getId).toList();
 
     Map<UUID, Admission> admissionByPatient = admissionRepo
@@ -90,5 +93,12 @@ public class PatientController {
   public List<DocumentResponse> documents(@PathVariable UUID id) {
     return documentRepo.findByPatientIdOrderByDesc(id)
         .stream().map(DocumentResponse::from).toList();
+  }
+
+  @GetMapping("/{id}/prediction")
+  public ResponseEntity<PredictionResponse> prediction(@PathVariable UUID id) {
+    var admission = admissionRepo.findLatestByPatientId(id)
+        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "No admission found for patient"));
+    return ResponseEntity.ok(predictionService.getOrCompute(admission));
   }
 }
