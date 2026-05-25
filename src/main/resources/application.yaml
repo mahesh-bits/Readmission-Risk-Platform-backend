@@ -1,8 +1,11 @@
 spring:
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5433/postgres}
-    username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:postgres}
+#    url: ${DB_URL:jdbc:postgresql://localhost:5433/postgres}
+#    username: ${DB_USER:postgres}
+#    password: ${DB_PASSWORD:postgres}
+      url: ${DB_URL:jdbc:postgresql://rrm-db.postgres.database.azure.com/postgres}
+      username: ${DB_USER:admin_rrm}
+      password: ${DB_PASSWORD:Prince-431}
 
   jpa:
     hibernate:
