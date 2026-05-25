@@ -13,7 +13,7 @@ public class InferenceController {
   private final RestClient restClient;
 
   public InferenceController(
-          @Value("${ML_BASE_URL:http://localhost:8082}") String baseUrl
+          @Value("${ML_BASE_URL:https://rrm-ml-service-fya6aaejd0bwc8ha.southindia-01.azurewebsites.net}") String baseUrl
   ) {
     this.restClient = RestClient.builder()
             .baseUrl(baseUrl)
