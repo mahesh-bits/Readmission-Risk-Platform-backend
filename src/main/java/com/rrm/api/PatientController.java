@@ -49,6 +49,7 @@ public class PatientController {
       patients = repo.findAll();
     }
     if (patients.isEmpty()) return List.of();
+    log.info("patients: {}", patients);
     List<UUID> ids = patients.stream().map(Patient::getId).toList();
 
     Map<UUID, Admission> admissionByPatient = admissionRepo

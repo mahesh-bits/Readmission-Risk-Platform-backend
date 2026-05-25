@@ -1,4 +1,4 @@
--- V10__synthetic_data.sql
+/*-- V10__synthetic_data.sql
 -- 50 patients | 100 admissions | 100 predictions
 -- Scenarios: CHF, DKA, sepsis, COPD, AKI, stroke, NSTEMI, cirrhosis, cancer, alcohol withdrawal,
 --             asthma, hypertensive emergencies, PE, appendicitis, lupus, anaphylaxis and more.
@@ -773,4 +773,4 @@ SET readmitted_30d = EXISTS (
 );
 
 -- ========================= REFRESH MATERIALIZED VIEW =========================
-REFRESH MATERIALIZED VIEW CONCURRENTLY mv_patient_admission_features;
+REFRESH MATERIALIZED VIEW CONCURRENTLY mv_patient_admission_features;*/
