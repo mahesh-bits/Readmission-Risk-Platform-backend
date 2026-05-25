@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/dashboard")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "http://rrm-backend-haa4gahsezf5chgc.southindia-01.azurewebsites.net"})
+@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "https://prrmapp-cvedhvdhf7esbdc2.southindia-01.azurewebsites.net"})
 public class DashboardController {
 
   @PersistenceContext
