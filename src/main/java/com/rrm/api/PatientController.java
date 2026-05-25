@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/patients")
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "https://prrmapp-cvedhvdhf7esbdc2.southindia-01.azurewebsites.net"})
 public class PatientController {
 
   private static final Logger log = LoggerFactory.getLogger(PatientController.class);

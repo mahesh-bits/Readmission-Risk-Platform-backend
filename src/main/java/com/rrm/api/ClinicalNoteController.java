@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000", "https://prrmapp-cvedhvdhf7esbdc2.southindia-01.azurewebsites.net"})
 public class ClinicalNoteController {
 
   private final ClinicalNoteRepo noteRepo;
