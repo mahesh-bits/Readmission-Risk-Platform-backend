@@ -24,7 +24,7 @@ spring:
       - io.opentelemetry.instrumentation.spring.autoconfigure.OpenTelemetryAutoConfiguration
 
 server:
-  port: 8081
+  port: 8080
 
 management:
   endpoints:
