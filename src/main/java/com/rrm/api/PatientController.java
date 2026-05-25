@@ -8,6 +8,8 @@ import com.rrm.repo.DocumentRepo;
 import com.rrm.repo.EncounterRepo;
 import com.rrm.repo.PatientRepo;
 import com.rrm.repo.PredictionRepo;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +21,7 @@ import java.util.stream.Collectors;
 @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:4300", "http://localhost:3000"})
 public class PatientController {
 
+  private static final Logger log = LoggerFactory.getLogger(PatientController.class);
   private final PatientRepo repo;
   private final AdmissionRepo admissionRepo;
   private final PredictionRepo predictionRepo;
@@ -46,7 +49,7 @@ public class PatientController {
       patients = repo.findAll();
     }
     if (patients.isEmpty()) return List.of();
-
+    log.info("patients: {}", patients);
     List<UUID> ids = patients.stream().map(Patient::getId).toList();
 
     Map<UUID, Admission> admissionByPatient = admissionRepo
